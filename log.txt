@@ -1,0 +1,74 @@
+DEBUG:yfinance:Entering get()
+DEBUG:yfinance:url=https://query2.finance.yahoo.com/v1/finance/search?q=TSLA
+DEBUG:yfinance:params=None
+DEBUG:yfinance: Entering _get_cookie_and_crumb()
+DEBUG:yfinance:cookie_mode = 'basic'
+DEBUG:yfinance:  Entering _get_cookie_and_crumb_basic()
+DEBUG:peewee:('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+DEBUG:peewee:('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+DEBUG:yfinance:loaded persistent cookie
+DEBUG:yfinance:reusing cookie
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/11" 200 11
+DEBUG:yfinance:crumb = 'n4Cn2G896M9'
+DEBUG:yfinance:  Exiting _get_cookie_and_crumb_basic()
+DEBUG:yfinance: Exiting _get_cookie_and_crumb()
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://query2.finance.yahoo.com:443 "GET /v1/finance/search?q=TSLA&crumb=n4Cn2G896M9 HTTP/11" 200 None
+DEBUG:yfinance:response code=200
+DEBUG:yfinance:Exiting get()
+DEBUG:yfinance:get_raw_json(): https://query2.finance.yahoo.com/v10/finance/quoteSummary/TSLA
+DEBUG:yfinance:Entering get()
+DEBUG:yfinance:url=https://query2.finance.yahoo.com/v10/finance/quoteSummary/TSLA
+DEBUG:yfinance:params={'modules': 'financialData,quoteType,defaultKeyStatistics,assetProfile,summaryDetail', 'corsDomain': 'finance.yahoo.com', 'formatted': 'false', 'symbol': 'TSLA'}
+DEBUG:yfinance: Entering _get_cookie_and_crumb()
+DEBUG:yfinance:cookie_mode = 'basic'
+DEBUG:yfinance:  Entering _get_cookie_and_crumb_basic()
+DEBUG:yfinance:reusing cookie
+DEBUG:yfinance:reusing crumb
+DEBUG:yfinance:  Exiting _get_cookie_and_crumb_basic()
+DEBUG:yfinance: Exiting _get_cookie_and_crumb()
+DEBUG:urllib3.connectionpool:https://query2.finance.yahoo.com:443 "GET /v10/finance/quoteSummary/TSLA?modules=financialData%2CquoteType%2CdefaultKeyStatistics%2CassetProfile%2CsummaryDetail&corsDomain=finance.yahoo.com&formatted=false&symbol=TSLA&crumb=n4Cn2G896M9 HTTP/11" 200 3011
+DEBUG:yfinance:response code=200
+DEBUG:yfinance:Exiting get()
+DEBUG:yfinance:Entering get()
+DEBUG:yfinance:url=https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/TSLA?symbol=TSLA&type=trailingPegRatio&period1=1705190400&period2=1721001600
+DEBUG:yfinance:params=None
+DEBUG:yfinance: Entering _get_cookie_and_crumb()
+DEBUG:yfinance:cookie_mode = 'basic'
+DEBUG:yfinance:  Entering _get_cookie_and_crumb_basic()
+DEBUG:yfinance:reusing cookie
+DEBUG:yfinance:reusing crumb
+DEBUG:yfinance:  Exiting _get_cookie_and_crumb_basic()
+DEBUG:yfinance: Exiting _get_cookie_and_crumb()
+DEBUG:urllib3.connectionpool:https://query1.finance.yahoo.com:443 "GET /ws/fundamentals-timeseries/v1/finance/timeseries/TSLA?symbol=TSLA&type=trailingPegRatio&period1=1705190400&period2=1721001600&crumb=n4Cn2G896M9 HTTP/11" 200 476
+DEBUG:yfinance:response code=200
+DEBUG:yfinance:Exiting get()
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): google.serper.dev:443
+DEBUG:urllib3.connectionpool:https://google.serper.dev:443 "POST /news?q=financial+news+about+Tesla%2C+Inc.+or+TSLA&gl=us&hl=en&num=10&tbs=qdr%3Ad5 HTTP/11" 200 5522
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): finance.yahoo.com:443
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /m/131e7942-4b6b-34fb-92cf-2e89cf0adf47/dow-jones-futures%3A-how-will.html HTTP/11" 200 None
+DEBUG:charset_normalizer:Encoding detection: utf_8 is most likely the one.
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /m/e4c02cc7-2770-39e1-9313-587425c08810/giant-fund-sells-nvidia-stock.html HTTP/11" 200 None
+DEBUG:charset_normalizer:Encoding detection: utf_8 is most likely the one.
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /news/elon-musk-endorses-trump-shooting-004344375.html HTTP/11" 200 None
+DEBUG:charset_normalizer:Encoding detection: utf_8 is most likely the one.
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /m/29c92e28-b5ab-392e-8f22-ae525864f9e8/tesla-pauses-after-huge-run.html HTTP/11" 200 None
+DEBUG:charset_normalizer:Encoding detection: utf_8 is most likely the one.
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /news/biden-vs-trump-elon-musk-122808721.html HTTP/11" 200 None
+DEBUG:charset_normalizer:Encoding detection: utf_8 is most likely the one.
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /news/teslas-valuation-is-turning-heads-chart-of-the-week-100642187.html HTTP/11" 200 None
+DEBUG:charset_normalizer:Encoding detection: utf_8 is most likely the one.
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /m/44080072-168e-3d76-a93f-a8895529023e/is-tesla-stock-a-buy%3F.html HTTP/11" 200 None
+DEBUG:charset_normalizer:Encoding detection: utf_8 is most likely the one.
+DEBUG:urllib3.connectionpool:https://finance.yahoo.com:443 "GET /m/eadf2727-1327-3899-82b9-e3162601cecd/tesla%27s-resurgence-is-great.html HTTP/11" 200 None
+DEBUG:charset_normalizer:Encoding detection: utf_8 is most likely the one.
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.americanbankingnews.com:443
+DEBUG:urllib3.connectionpool:https://www.americanbankingnews.com:443 "GET /2024/07/14/tesla-nasdaqtsla-stock-price-up-2-3-on-analyst-upgrade.html HTTP/11" 200 None
+DEBUG:charset_normalizer:Encoding detection: utf_8 is most likely the one.
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.investors.com:443
+DEBUG:urllib3.connectionpool:https://www.investors.com:443 "GET /news/technology/tesla-motors-stock-quotes-company-news-and-chart-analysis/ HTTP/11" 200 None
+DEBUG:charset_normalizer:Encoding detection: utf_8 is most likely the one.
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.cnbc.com:443
+DEBUG:urllib3.connectionpool:https://www.cnbc.com:443 "GET /2024/07/11/tesla-shares-fall-6percent-after-report-of-robotaxi-unveiling-delay.html HTTP/11" 200 None
+DEBUG:charset_normalizer:Encoding detection: utf_8 is most likely the one.

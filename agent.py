@@ -1,22 +1,26 @@
-from langchain_community.llms import LlamaCpp
+from langchain_openai import OpenAI
 from langchain.agents import ZeroShotAgent, AgentExecutor
 from langchain.agents.tools import Tool
 from langchain import LLMChain
 from ticker_news import get_ticker_news
 from financial_statements import get_financial_statements
 from prompt import prompt
+import json
+import os
 
+with open('config.json') as f:
+    config = json.load(f)
+os.environ['OPENAI_API_KEY'] = config['OPENAI_API_KEY']
 
-# LLama as LLM
-llm = LlamaCpp(
-    model_path="llama-cpp-python/vendor/llama.cpp/models/ggml-vocab-llama-bpe.gguf", max_tokens=256, temperature=0.1, verbose=True
-)
+#OpenAI - gpt 3.5 turbo
+llm = OpenAI(model="gpt-3.5-turbo-instruct", api_key="OPENAI_API_KEY", temperature=0.0)
 
-# creating agent
+# creating chain
 llm_chain = LLMChain(
     llm=llm,  
     prompt=prompt 
 )
+
 
 # Tools list for agent
 tools = [  
@@ -34,6 +38,7 @@ tools = [
 
 tool_names = [tool.name for tool in tools]
 
+# creating agent
 agent = ZeroShotAgent(llm_chain=llm_chain, allowed_tools=tool_names)
 
 agent_executor = AgentExecutor.from_agent_and_tools(agent=agent, tools=tools, verbose=True, max_iterations=2)

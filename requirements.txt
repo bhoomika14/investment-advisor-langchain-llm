@@ -3,3 +3,4 @@ yfinance
 requests
 langchain_experimental
 streamlit
+langchain_openai

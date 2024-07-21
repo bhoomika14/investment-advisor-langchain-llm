@@ -268,3 +268,7 @@ DEBUG:yfinance:  Exiting history()
 DEBUG:yfinance: Exiting history()
 DEBUG:yfinance:Exiting download()
 INFO:root:Successfully fetched financial statements
+DEBUG:httpx:load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG:httpx:load_verify_locations cafile='D:\\Investment Advisor\\investment-advisor-langchain-llm\\dnp_env\\lib\\site-packages\\certifi\\cacert.pem'
+DEBUG:httpx:load_ssl_context verify=True cert=None trust_env=True http2=False
+DEBUG:httpx:load_verify_locations cafile='D:\\Investment Advisor\\investment-advisor-langchain-llm\\dnp_env\\lib\\site-packages\\certifi\\cacert.pem'

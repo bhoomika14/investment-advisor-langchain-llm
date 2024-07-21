@@ -1,7 +1,6 @@
 from langchain_openai import OpenAI
 from langchain.agents import ZeroShotAgent, AgentExecutor
 from langchain.agents.tools import Tool
-from langchain import LLMChain
 from ticker_news import get_ticker_news
 from financial_statements import get_financial_statements
 from prompt import prompt
@@ -16,11 +15,7 @@ os.environ['OPENAI_API_KEY'] = config['OPENAI_API_KEY']
 llm = OpenAI(model="gpt-3.5-turbo-instruct", api_key="OPENAI_API_KEY", temperature=0.0)
 
 # creating chain
-llm_chain = LLMChain(
-    llm=llm,  
-    prompt=prompt 
-)
-
+llm_chain = prompt | llm
 
 # Tools list for agent
 tools = [  

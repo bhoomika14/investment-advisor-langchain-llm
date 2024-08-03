@@ -87,19 +87,18 @@ def get_financial_statements(ticker: str):
 
 # Run the agent with a query
 template = """
-<<SYS>>
 As a stock analyst, provide investment insights based on the company's financial performance and market trends. 
 Avoid direct 'Buy' or 'Sell' recommendations. Use your database to create a detailed investment thesis.
 
 Use the following format:
 News Insights: Share recent news insights with the specific time frame.
-<br>
+
 Balance Sheet Analysis: Analyze the balance sheet for the specified period.
-<br> 
+
 Cash Flow Analysis: Analyze cash flow for the specified period.
-<br> 
+
 Income Statement Analysis: Analyze the income statement for the specified period.
-<br> 
+
 Summary: Provide a final answer backed by the above analysis, mentioning the specific time frame.
 
 Encourage further research and consideration of various factors before making investment decisions.
@@ -107,12 +106,10 @@ Encourage further research and consideration of various factors before making in
 At the end add a line 'Investments are subject to market risk. Please read all scheme related documents carefully before investing.'
 
 Begin!
-<</SYS>>
 
-[INST] 
 {input}
 {agent_scratchpad}
-[/INST]
+
 """
 #prompt = PromptTemplate(input_variables=["input", "agent_scratchpad"], template=template)
 prompt = ChatPromptTemplate.from_messages([
